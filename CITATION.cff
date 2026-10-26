@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use placebokit, please cite Phipson and Smyth (2010), listed below, for the p-value and, optionally, this software."
+title: "placebokit: negative controls and train/serve parity checks for model results"
+version: 0.1.0
+date-released: 2026-10-23
+license: MIT
+repository-code: "https://github.com/prashant7799/placebokit"
+authors:
+  - family-names: Lohar
+    given-names: Prashant
+keywords:
+  - negative control
+  - permutation test
+  - model evaluation
+  - data leakage
+references:
+  - type: article
+    title: "Permutation P-values should never be zero: calculating exact P-values when permutations are randomly drawn"
+    authors:
+      - family-names: Phipson
+        given-names: Belinda
+      - family-names: Smyth
+        given-names: Gordon K.
+    journal: "Statistical Applications in Genetics and Molecular Biology"
+    volume: 9
+    issue: "1"
+    year: 2010
+    doi: 10.2202/1544-6115.1585
+  - type: article
+    title: "Permutation tests for studying classifier performance"
+    authors:
+      - family-names: Ojala
+        given-names: Markus
+      - family-names: Garriga
+        given-names: Gemma C.
+    journal: "Journal of Machine Learning Research"
+    volume: 11
+    start: 1833
+    end: 1863
+    year: 2010
+    url: "https://www.jmlr.org/papers/v11/ojala10a.html"

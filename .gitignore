@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Tools
+.venv/
+.pytest_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+
+# Secrets and local data: never commit these
+.env*
+*.key
+*.pem
+data/
+
+# Editors and OS
+.DS_Store
+.idea/
+.vscode/

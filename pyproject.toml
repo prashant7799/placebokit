@@ -1,0 +1,75 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "placebokit"
+dynamic = ["version"]
+description = "Negative controls and train/serve parity checks that a real model result must beat."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+    { name = "Prashant Lohar", email = "120216391+prashant7799@users.noreply.github.com" },
+]
+keywords = [
+    "negative control",
+    "permutation test",
+    "placebo",
+    "model evaluation",
+    "data leakage",
+    "train serve skew",
+    "time series",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Framework :: Pytest",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Software Development :: Testing",
+    "Typing :: Typed",
+]
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "hypothesis>=6.80",
+    "ruff==0.17.1",  # pinned so new lint rules cannot break CI
+]
+
+[project.urls]
+Homepage = "https://github.com/prashant7799/placebokit"
+Issues = "https://github.com/prashant7799/placebokit/issues"
+
+[tool.hatch.version]
+path = "src/placebokit/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/placebokit"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["placebokit"]
+known-local-folder = ["simdata"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra -p pytester"
